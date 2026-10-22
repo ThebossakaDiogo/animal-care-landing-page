@@ -101,7 +101,7 @@ function Hero() {
           </a>
         </div>
         <p className="mt-2 text-xs text-muted-foreground">+120 recetas caseras</p>
-        <p className="text-sm font-bold text-primary">desde US$ 27</p>
+        <p className="text-sm font-bold text-primary">desde US$ 14,90</p>
       </div>
       <div className="absolute right-12 top-[clamp(12px,3vh,40px)] z-20 hidden w-[clamp(150px,12vw,200px)] animate-slide-in-right rounded-2xl bg-card p-4 text-left shadow-soft lg:block" style={{ animationDelay: "700ms" }}>
         <p className="text-xs font-semibold uppercase tracking-wider text-accent">Listas en</p>
@@ -209,7 +209,8 @@ function Solution() {
 const plans = [
   {
     name: "Basic",
-    price: "27",
+    price: "14",
+    cents: ",90",
     desc: "Para empezar la transición con seguridad.",
     features: ["60 recetas para perros y gatos", "Guía de transición del pienso en 7 días", "Lista de alimentos prohibidos", "Tabla de porciones por peso"],
     cta: "Quiero el Basic",
@@ -217,7 +218,8 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "67",
+    price: "27",
+    cents: ",90",
     desc: "Nutrición terapéutica completa y acompañada.",
     features: [
       "Todo lo del Basic",
@@ -248,6 +250,7 @@ function Plans() {
               <p className="mt-6 flex items-baseline gap-1">
                 <span className="text-lg">US$</span>
                 <span className="font-serif-display text-6xl">{p.price}</span>
+                <span className="font-serif-display text-3xl">{p.cents}</span>
                 <span className={`text-sm ${p.pro ? "text-primary-foreground/70" : "text-muted-foreground"}`}>pago único</span>
               </p>
               <ul className="mt-8 flex-1 space-y-3 text-sm">
