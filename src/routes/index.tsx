@@ -13,10 +13,10 @@ import {
   Wallet,
   X,
 } from "lucide-react";
-import dogLeft from "@/assets/dog-left.jpg";
-import petsCenter from "@/assets/pets-center.jpg";
-import catRight from "@/assets/cat-right.jpg";
-import recipes from "@/assets/recipes.jpg";
+import dogLeft from "@/assets/dog-left.webp";
+import petsCenter from "@/assets/pets-center.webp";
+import catRight from "@/assets/cat-right.webp";
+import recipes from "@/assets/recipes.webp";
 import { Marquee, Transformation, HowItWorks, Calculator, Testimonials, Compare, Bonus, AppShowcase } from "@/components/landing/sections";
 
 export const Route = createFileRoute("/")({
