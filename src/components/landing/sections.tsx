@@ -231,7 +231,7 @@ export function Testimonials() {
     const id = setInterval(() => setI((x) => (x + 1) % testimonials.length), 6000);
     return () => clearInterval(id);
   }, []);
-  const t = testimonials[i];
+  const t = testimonials[i]!;
   return (
     <section id="depoimentos" className="bg-secondary px-5 py-24 md:px-12">
       <div className="mx-auto max-w-6xl">
