@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, Check, ChefHat, Gift, Leaf, Quote, ShoppingBasket, Snowflake, Sparkles, Star, X } from "lucide-react";
-import t1 from "@/assets/t-1.jpg";
-import t2 from "@/assets/t-2.jpg";
-import t3 from "@/assets/t-3.jpg";
-import prep from "@/assets/prep.jpg";
-import dogLeft from "@/assets/dog-left.jpg";
-import catRight from "@/assets/cat-right.jpg";
-import appImg from "@/assets/app.jpg";
+import t1 from "@/assets/t-1.webp";
+import t2 from "@/assets/t-2.webp";
+import t3 from "@/assets/t-3.webp";
+import prep from "@/assets/prep.webp";
+import dogLeft from "@/assets/dog-left.webp";
+import catRight from "@/assets/cat-right.webp";
+import appImg from "@/assets/app.webp";
 
 function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);

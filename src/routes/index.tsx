@@ -13,10 +13,10 @@ import {
   Wallet,
   X,
 } from "lucide-react";
-import dogLeft from "@/assets/dog-left.jpg";
-import petsCenter from "@/assets/pets-center.jpg";
-import catRight from "@/assets/cat-right.jpg";
-import recipes from "@/assets/recipes.jpg";
+import dogLeft from "@/assets/dog-left.webp";
+import petsCenter from "@/assets/pets-center.webp";
+import catRight from "@/assets/cat-right.webp";
+import recipes from "@/assets/recipes.webp";
 import { Marquee, Transformation, HowItWorks, Calculator, Testimonials, Compare, Bonus, AppShowcase } from "@/components/landing/sections";
 
 export const Route = createFileRoute("/")({
@@ -119,7 +119,7 @@ function Hero() {
           </div>
         </div>
         <div className="relative h-full flex-[1.265] overflow-hidden rounded-t-3xl animate-photo-reveal lg:rounded-t-[3rem]" style={{ animationDelay: "600ms" }}>
-          <img src={petsCenter} alt="Perro y gato con ingredientes naturales" className="h-full w-full object-cover object-top" width={896} height={1152} />
+          <img src={petsCenter} fetchPriority="high" alt="Perro y gato con ingredientes naturales" className="h-full w-full object-cover object-top" width={896} height={1152} />
           <div className="absolute inset-x-0 bottom-0 hidden h-1/2 bg-gradient-to-t from-primary/80 to-transparent md:block" />
           <div className="absolute inset-x-0 bottom-[clamp(12px,3vh,40px)] hidden flex-col items-center gap-3 text-center md:flex">
             <p className="font-serif-display text-[clamp(20px,min(2.2vw,4vh),38px)] leading-tight text-primary-foreground">Nutrición que sana,<br />en el plato de casa</p>
@@ -303,7 +303,18 @@ function FinalCta() {
         <h2 className="max-w-2xl font-serif-display text-4xl md:text-5xl">Cada comida puede ser un año más a su lado.</h2>
         <a href="#planos" className={btnAccent}>Empezar hoy <ArrowRight className="h-4 w-4" /></a>
       </div>
-      <p className="mt-10 text-center text-xs text-muted-foreground">© 2026 CozyPaws Natural. Consulta siempre a un veterinario.</p>
+      <footer className="mx-auto mt-10 max-w-4xl space-y-3 text-center text-xs leading-relaxed text-muted-foreground">
+        <p>© 2026 CozyPaws Natural. Consulta siempre a un veterinario.</p>
+        <p>
+          Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc. Además, este sitio NO está
+          respaldado por Facebook ni por Meta de ninguna manera. FACEBOOK e INSTAGRAM son marcas registradas de Meta Platforms, Inc.
+        </p>
+        <p>
+          AURORA SERVIÇOS LTDA (Aurora Serviços) · CNPJ 52.428.050/1548-09 · Fundada el 14/04/2012
+          <br />Rua Homologação, 4691 — Setor Homologação, São Paulo/SP — CEP 49588-601, Brasil
+          <br />Teléfono: (11) 4871-4893 · Celular: (11) 97907-1686
+        </p>
+      </footer>
     </section>
   );
 }
