@@ -17,7 +17,7 @@ import dogLeft from "@/assets/dog-left.jpg";
 import petsCenter from "@/assets/pets-center.jpg";
 import catRight from "@/assets/cat-right.jpg";
 import recipes from "@/assets/recipes.jpg";
-import { Marquee, Transformation, HowItWorks, Calculator, Testimonials, Compare, Bonus } from "@/components/landing/sections";
+import { Marquee, Transformation, HowItWorks, Calculator, Testimonials, Compare, Bonus, AppShowcase } from "@/components/landing/sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,6 +57,7 @@ function Header() {
       <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
         <a href="#problema" className="text-foreground">El problema</a>
         <a href="#solucao">La solución</a>
+        <a href="#app">App</a>
         <a href="#depoimentos">Testimonios</a>
         <a href="#planos">Planes</a>
         <a href="#faq">Preguntas</a>
@@ -315,6 +316,7 @@ function Index() {
       <Solution />
       <HowItWorks />
       <Calculator />
+      <AppShowcase />
       <Testimonials />
       <Compare />
       <Bonus />

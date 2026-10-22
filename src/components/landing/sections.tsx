@@ -6,6 +6,7 @@ import t3 from "@/assets/t-3.jpg";
 import prep from "@/assets/prep.jpg";
 import dogLeft from "@/assets/dog-left.jpg";
 import catRight from "@/assets/cat-right.jpg";
+import appImg from "@/assets/app.jpg";
 
 function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -330,6 +331,57 @@ export function Bonus() {
             Ver planes <ArrowRight className="h-4 w-4" />
           </a>
         </div>
+      </div>
+    </section>
+  );
+}
+
+const appFeatures = [
+  { icon: ChefHat, t: "Menú semanal automático", d: "Recetas según el peso, la edad y la salud de tu mascota." },
+  { icon: ShoppingBasket, t: "Lista de compras", d: "Generada al instante, agrupada por pasillo del súper." },
+  { icon: Sparkles, t: "Diario de evolución", d: "Registra apetito, pelo y energía y mira el progreso en gráficos." },
+  { icon: Snowflake, t: "Recordatorios", d: "Avisos para cocinar, descongelar y servir a tiempo." },
+];
+
+export function AppShowcase() {
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setActive((x) => (x + 1) % appFeatures.length), 3500);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <section id="app" className="px-5 py-24 md:px-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
+        <div>
+          <p className={eyebrow}>La app CozyPaws</p>
+          <h2 className={h2}>Toda la nutrición de tu mascota en el bolsillo</h2>
+          <p className="mt-4 text-muted-foreground">Incluida en el plan Pro. Disponible para iPhone y Android.</p>
+          <div className="mt-8 space-y-3">
+            {appFeatures.map(({ icon: Icon, t, d }, i) => (
+              <button
+                key={t}
+                onClick={() => setActive(i)}
+                className={`flex w-full items-start gap-4 rounded-2xl p-4 text-left transition-all ${active === i ? "bg-card shadow-soft" : "opacity-60 hover:opacity-100"}`}
+              >
+                <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-colors ${active === i ? "bg-accent text-accent-foreground" : "bg-secondary text-primary"}`}>
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="block font-semibold text-primary">{t}</span>
+                  <span className="block text-sm text-muted-foreground">{d}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <Reveal className="relative mx-auto w-full max-w-md">
+          <div className="absolute inset-8 -z-10 rounded-full bg-accent/20 blur-3xl" />
+          <img src={appImg} alt="Aplicación CozyPaws con plan semanal de comidas" loading="lazy" width={896} height={1152} className="w-full rounded-[2.5rem] shadow-soft animate-float" />
+          <div key={active} className="absolute -left-4 top-1/3 max-w-[200px] rounded-2xl bg-card p-4 shadow-soft animate-fade-up md:-left-10">
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent">Ahora</p>
+            <p className="mt-1 text-sm font-semibold text-primary">{appFeatures[active]!.t}</p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
