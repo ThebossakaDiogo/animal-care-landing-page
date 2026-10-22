@@ -68,9 +68,9 @@ function Hero() {
   const words = [["Comida", "de", "verdade"], ["para", "viver", "mais"]];
   let i = 0;
   return (
-    <section className="relative flex flex-col overflow-hidden lg:h-[calc(100vh-76px)] lg:min-h-[680px]">
-      <div className="relative z-[5] px-5 pt-8 text-center md:px-12 lg:pt-[4.5rem]">
-        <h1 className="font-serif-display text-[clamp(44px,7.5vw,110px)] leading-[0.95] tracking-tight text-primary">
+    <section className="relative flex flex-col overflow-hidden">
+      <div className="relative z-[5] px-5 pt-8 text-center md:px-12 lg:px-[clamp(220px,18vw,300px)] lg:pt-[4.5rem]">
+        <h1 className="font-serif-display text-[clamp(44px,6.5vw,96px)] leading-[0.95] tracking-tight text-primary">
           {words.map((line, li) => (
             <span key={li} className="block">
               {line.map((w) => {
@@ -108,7 +108,7 @@ function Hero() {
       </div>
 
       {/* Bottom photos */}
-      <div className="relative z-10 mt-8 flex items-end gap-2 px-2 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:gap-0 lg:px-0">
+      <div className="relative z-10 mt-10 flex items-end gap-2 px-2 lg:mt-24 lg:gap-0 lg:px-0">
         <div className="relative flex-1 animate-photo-reveal" style={{ animationDelay: "750ms" }}>
           <img src={dogLeft} alt="Golden retriever feliz com tigela de comida natural" className="block max-h-[min(58vh,45vw)] w-full rounded-t-3xl object-cover object-top lg:rounded-none lg:rounded-tl-[3rem]" width={768} height={1024} />
           <div className="absolute bottom-[clamp(16px,4vh,50px)] left-[clamp(12px,2vw,32px)] hidden items-center gap-3 rounded-full bg-card/90 px-4 py-2 backdrop-blur md:flex">
