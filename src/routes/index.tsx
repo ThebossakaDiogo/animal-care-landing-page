@@ -17,6 +17,7 @@ import dogLeft from "@/assets/dog-left.jpg";
 import petsCenter from "@/assets/pets-center.jpg";
 import catRight from "@/assets/cat-right.jpg";
 import recipes from "@/assets/recipes.jpg";
+import { Marquee, Transformation, HowItWorks, Calculator, Testimonials, Compare, Bonus } from "@/components/landing/sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,6 +57,7 @@ function Header() {
       <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
         <a href="#problema" className="text-foreground">O problema</a>
         <a href="#solucao">A solução</a>
+        <a href="#depoimentos">Depoimentos</a>
         <a href="#planos">Planos</a>
         <a href="#faq">Dúvidas</a>
       </nav>
@@ -68,9 +70,9 @@ function Hero() {
   const words = [["Comida", "de", "verdade"], ["para", "viver", "mais"]];
   let i = 0;
   return (
-    <section className="relative flex flex-col overflow-hidden">
-      <div className="relative z-[5] px-5 pt-8 text-center md:px-12 lg:px-[clamp(220px,18vw,300px)] lg:pt-[4.5rem]">
-        <h1 className="font-serif-display text-[clamp(44px,6.5vw,96px)] leading-[0.95] tracking-tight text-primary">
+    <section className="relative flex flex-col overflow-hidden lg:h-[calc(100svh-76px)] lg:min-h-[560px]">
+      <div className="relative z-[5] shrink-0 px-5 pt-6 text-center md:px-12 lg:px-[clamp(200px,17vw,280px)] lg:pt-[clamp(12px,3vh,40px)]">
+        <h1 className="font-serif-display text-[clamp(44px,min(6.2vw,10.5vh),96px)] leading-[0.95] tracking-tight text-primary">
           {words.map((line, li) => (
             <span key={li} className="block">
               {line.map((w) => {
@@ -84,50 +86,48 @@ function Hero() {
             </span>
           ))}
         </h1>
-        <p className="mx-auto mt-5 max-w-md text-muted-foreground animate-fade-up lg:hidden" style={{ animationDelay: "700ms" }}>
+        <p className="mx-auto mt-4 max-w-xl text-muted-foreground animate-fade-up" style={{ animationDelay: "700ms" }}>
           A ração ultraprocessada desgasta seu pet em silêncio. Receitas caseiras simples devolvem a vitalidade.
         </p>
-        <a href="#planos" className={`${btnAccent} mt-6 lg:hidden`}>Ver receitas <ArrowRight className="h-4 w-4" /></a>
+        <a href="#planos" className={`${btnAccent} mt-5 lg:hidden`}>Ver receitas <ArrowRight className="h-4 w-4" /></a>
       </div>
 
-      {/* Desktop side cards */}
-      <div className="absolute left-12 top-[50px] z-20 hidden w-[clamp(160px,14vw,240px)] animate-slide-in-left lg:block" style={{ animationDelay: "600ms" }}>
-        <div className="relative aspect-square overflow-hidden rounded-2xl shadow-soft">
+      <div className="absolute left-12 top-[clamp(12px,3vh,40px)] z-20 hidden w-[clamp(130px,11vw,190px)] animate-slide-in-left lg:block" style={{ animationDelay: "600ms" }}>
+        <div className="relative aspect-square overflow-hidden rounded-2xl shadow-soft animate-float">
           <img src={recipes} alt="Marmitas de comida natural para cães" className="h-full w-full object-cover" width={1024} height={1024} />
-          <a href="#planos" className="absolute bottom-2 right-2 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
-            <ArrowUpRight className="h-5 w-5" />
+          <a href="#planos" className="absolute bottom-2 right-2 grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground">
+            <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
-        <p className="mt-3 text-sm text-muted-foreground">+120 receitas caseiras</p>
-        <p className="font-bold text-primary">a partir de R$ 27</p>
+        <p className="mt-2 text-xs text-muted-foreground">+120 receitas caseiras</p>
+        <p className="text-sm font-bold text-primary">a partir de R$ 27</p>
       </div>
-      <div className="absolute right-12 top-[50px] z-20 hidden w-[clamp(160px,13vw,220px)] animate-slide-in-right rounded-2xl bg-card p-5 text-left shadow-soft lg:block" style={{ animationDelay: "700ms" }}>
+      <div className="absolute right-12 top-[clamp(12px,3vh,40px)] z-20 hidden w-[clamp(150px,12vw,200px)] animate-slide-in-right rounded-2xl bg-card p-4 text-left shadow-soft lg:block" style={{ animationDelay: "700ms" }}>
         <p className="text-xs font-semibold uppercase tracking-wider text-accent">Prontas em</p>
-        <p className="font-serif-display text-5xl text-primary">15 min</p>
-        <p className="mt-2 text-sm text-muted-foreground">Sem planilhas, sem horas na cozinha. Balanceadas para cães e gatos.</p>
+        <p className="font-serif-display text-4xl text-primary">15 min</p>
+        <p className="mt-1 text-xs text-muted-foreground">Sem planilhas, sem horas na cozinha.</p>
       </div>
 
-      {/* Bottom photos */}
-      <div className="relative z-10 mt-10 flex items-end gap-2 px-2 lg:mt-24 lg:gap-0 lg:px-0">
-        <div className="relative flex-1 animate-photo-reveal" style={{ animationDelay: "750ms" }}>
-          <img src={dogLeft} alt="Golden retriever feliz com tigela de comida natural" className="block max-h-[min(58vh,45vw)] w-full rounded-t-3xl object-cover object-top lg:rounded-none lg:rounded-tl-[3rem]" width={768} height={1024} />
-          <div className="absolute bottom-[clamp(16px,4vh,50px)] left-[clamp(12px,2vw,32px)] hidden items-center gap-3 rounded-full bg-card/90 px-4 py-2 backdrop-blur md:flex">
+      <div className="relative z-10 mt-8 flex h-[60vh] min-h-0 items-end gap-2 px-2 lg:mt-[clamp(16px,4vh,48px)] lg:h-auto lg:flex-1 lg:gap-0 lg:px-0">
+        <div className="relative h-[80%] flex-1 overflow-hidden rounded-t-3xl animate-photo-reveal lg:rounded-none lg:rounded-tl-[3rem]" style={{ animationDelay: "750ms" }}>
+          <img src={dogLeft} alt="Golden retriever feliz com tigela de comida natural" className="h-full w-full object-cover object-top animate-kenburns" width={768} height={1024} />
+          <div className="absolute bottom-[clamp(12px,3vh,40px)] left-[clamp(12px,2vw,32px)] hidden items-center gap-3 rounded-full bg-card/90 px-4 py-2 backdrop-blur md:flex">
             <span className="font-serif-display text-3xl text-primary">32K+</span>
             <span className="text-xs leading-tight text-muted-foreground">tutores<br />transformados</span>
             <span className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground"><Plus className="h-4 w-4" /></span>
           </div>
         </div>
-        <div className="relative flex-[1.265] animate-photo-reveal" style={{ animationDelay: "600ms" }}>
-          <img src={petsCenter} alt="Cão e gato com ingredientes naturais" className="block max-h-[min(72vh,60vw)] w-full rounded-t-3xl object-cover object-top lg:rounded-t-[3rem]" width={896} height={1152} />
-          <div className="absolute inset-x-0 bottom-0 hidden h-1/2 rounded-b-none bg-gradient-to-t from-primary/80 to-transparent md:block" />
-          <div className="absolute inset-x-0 bottom-[clamp(16px,4vh,50px)] hidden flex-col items-center gap-4 text-center md:flex">
-            <p className="font-serif-display text-[clamp(22px,2.4vw,40px)] leading-tight text-primary-foreground">Nutrição que cura,<br />no prato de casa</p>
-            <a href="#planos" className={btnAccent}>Escolher meu plano <ArrowRight className="h-4 w-4" /></a>
+        <div className="relative h-full flex-[1.265] overflow-hidden rounded-t-3xl animate-photo-reveal lg:rounded-t-[3rem]" style={{ animationDelay: "600ms" }}>
+          <img src={petsCenter} alt="Cão e gato com ingredientes naturais" className="h-full w-full object-cover object-top" width={896} height={1152} />
+          <div className="absolute inset-x-0 bottom-0 hidden h-1/2 bg-gradient-to-t from-primary/80 to-transparent md:block" />
+          <div className="absolute inset-x-0 bottom-[clamp(12px,3vh,40px)] hidden flex-col items-center gap-3 text-center md:flex">
+            <p className="font-serif-display text-[clamp(20px,min(2.2vw,4vh),38px)] leading-tight text-primary-foreground">Nutrição que cura,<br />no prato de casa</p>
+            <a href="#planos" className={`${btnAccent} animate-pulse-ring`}>Escolher meu plano <ArrowRight className="h-4 w-4" /></a>
           </div>
         </div>
-        <div className="relative flex-1 animate-photo-reveal" style={{ animationDelay: "900ms" }}>
-          <img src={catRight} alt="Gato saudável diante de tigela com peixe e legumes" className="block max-h-[min(58vh,45vw)] w-full rounded-t-3xl object-cover object-top lg:rounded-none lg:rounded-tr-[3rem]" width={768} height={1024} />
-          <div className="absolute bottom-[clamp(16px,4vh,50px)] right-[clamp(12px,2vw,32px)] hidden items-center gap-2 rounded-full bg-card/90 px-4 py-2 backdrop-blur md:flex">
+        <div className="relative h-[80%] flex-1 overflow-hidden rounded-t-3xl animate-photo-reveal lg:rounded-none lg:rounded-tr-[3rem]" style={{ animationDelay: "900ms" }}>
+          <img src={catRight} alt="Gato saudável diante de tigela com peixe e legumes" className="h-full w-full object-cover object-top animate-kenburns" width={768} height={1024} />
+          <div className="absolute bottom-[clamp(12px,3vh,40px)] right-[clamp(12px,2vw,32px)] hidden items-center gap-2 rounded-full bg-card/90 px-4 py-2 backdrop-blur md:flex">
             <Star className="h-5 w-5 fill-accent text-accent" />
             <span className="font-serif-display text-3xl text-primary">4.9</span>
             <span className="text-xs text-muted-foreground">avaliação</span>
@@ -309,8 +309,15 @@ function Index() {
     <main className="bg-background">
       <Header />
       <Hero />
+      <Marquee />
       <Problem />
+      <Transformation />
       <Solution />
+      <HowItWorks />
+      <Calculator />
+      <Testimonials />
+      <Compare />
+      <Bonus />
       <Plans />
       <Faq />
       <FinalCta />
