@@ -303,7 +303,18 @@ function FinalCta() {
         <h2 className="max-w-2xl font-serif-display text-4xl md:text-5xl">Cada comida puede ser un año más a su lado.</h2>
         <a href="#planos" className={btnAccent}>Empezar hoy <ArrowRight className="h-4 w-4" /></a>
       </div>
-      <p className="mt-10 text-center text-xs text-muted-foreground">© 2026 CozyPaws Natural. Consulta siempre a un veterinario.</p>
+      <footer className="mx-auto mt-10 max-w-4xl space-y-3 text-center text-xs leading-relaxed text-muted-foreground">
+        <p>© 2026 CozyPaws Natural. Consulta siempre a un veterinario.</p>
+        <p>
+          Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc. Además, este sitio NO está
+          respaldado por Facebook ni por Meta de ninguna manera. FACEBOOK e INSTAGRAM son marcas registradas de Meta Platforms, Inc.
+        </p>
+        <p>
+          AURORA SERVIÇOS LTDA (Aurora Serviços) · CNPJ 52.428.050/1548-09 · Fundada el 14/04/2012
+          <br />Rua Homologação, 4691 — Setor Homologação, São Paulo/SP — CEP 49588-601, Brasil
+          <br />Teléfono: (11) 4871-4893 · Celular: (11) 97907-1686
+        </p>
+      </footer>
     </section>
   );
 }
