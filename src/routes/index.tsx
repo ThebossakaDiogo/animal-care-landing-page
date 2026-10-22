@@ -119,7 +119,7 @@ function Hero() {
           </div>
         </div>
         <div className="relative h-full flex-[1.265] overflow-hidden rounded-t-3xl animate-photo-reveal lg:rounded-t-[3rem]" style={{ animationDelay: "600ms" }}>
-          <img src={petsCenter} alt="Perro y gato con ingredientes naturales" className="h-full w-full object-cover object-top" width={896} height={1152} />
+          <img src={petsCenter} fetchPriority="high" alt="Perro y gato con ingredientes naturales" className="h-full w-full object-cover object-top" width={896} height={1152} />
           <div className="absolute inset-x-0 bottom-0 hidden h-1/2 bg-gradient-to-t from-primary/80 to-transparent md:block" />
           <div className="absolute inset-x-0 bottom-[clamp(12px,3vh,40px)] hidden flex-col items-center gap-3 text-center md:flex">
             <p className="font-serif-display text-[clamp(20px,min(2.2vw,4vh),38px)] leading-tight text-primary-foreground">Nutrición que sana,<br />en el plato de casa</p>
